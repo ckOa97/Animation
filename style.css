@@ -1,0 +1,105 @@
+body {
+
+    background-color: #050210;
+
+}
+
+#krug {
+
+    width: 500px;
+    height: 500px;
+    margin: 200px auto;
+    border-radius: 100%;
+    position: relative;
+    background-image: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    animation-name: myAnimation;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 1;
+
+}
+
+#krug::before {
+
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    content: '';
+    height: 450px;
+    width: 450px;
+    border-radius: 100%;
+    background-color: #050210;
+    z-index: 2;
+
+}
+
+#krug::after {
+
+    content: '';
+    width: 550px;
+    height: 550px;
+    margin: 0px auto;
+    background-image: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0px;
+    z-index: 0;
+    filter: blur(50px);
+    transform: translate(-20px, 20px);
+    
+}
+
+#krug-1 {
+    height: 450px;
+    width: 450px;
+    background-color: #120e22;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 100%;
+    z-index: 3;
+    transform: translate(0, 25px) scale(0, 0);
+    animation-name: myAnimation2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes myAnimation {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes myAnimation2 {
+
+    0% {
+        transform: translate(0, 25px) scale(0, 0);
+        opacity: 100%;
+    }
+
+
+    50% {
+        transform: translate(0, 25px) scale(0.9, 0.9);
+        opacity: 70%
+    }
+
+    100%{
+        transform: translate(0, 25px) scale(1, 1);
+        opacity: 30%
+    }
+
+}
